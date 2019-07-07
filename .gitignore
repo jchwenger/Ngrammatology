@@ -1,0 +1,7 @@
+# Vim fluff
+*.swp
+*.swo
+
+# Pyfluff
+.ipynb_checkpoints/*
+__pycache__/*
