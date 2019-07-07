@@ -1,5 +1,6 @@
 corpora = {
     'English': 15,
+    'British English': 18,
     'American English': 17,
     'French': 19,
     'German': 20,
@@ -14,11 +15,11 @@ def ngram_url(kwords,
     params = { 
         'year_start': year_start,
         'year_end': year_end,
-        'corpus': corpus,
+        'corpus': corpora[corpus],
         'kwords': kwords
     }
 
-    content = '%2C'.join(params['kwords']).replace(' ', '%20')
+    content = '%2C'.join(params['kwords']).replace(' ', '+')
     direct_url = '.'.join(['t1%3B%2C' + kword.replace(' ', '%20') + '%3B%2Cc0' for kword in params['kwords']])
     
     ngram_string = "https://books.google.com/ngrams/interactive_chart?content={}&\
